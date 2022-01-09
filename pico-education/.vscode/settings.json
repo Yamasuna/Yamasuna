@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "lcd_1602a.h": "c",
+        "i2c.h": "c",
+        "binary_info.h": "c",
+        "cstdio": "c",
+        "stdio.h": "c",
+        "calendar.h": "c",
+        "thermometer.h": "c"
+    }
+}
