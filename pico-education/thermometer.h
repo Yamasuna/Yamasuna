@@ -1,3 +1,6 @@
+#ifndef _HEADER_THERMOMETER
+#define _HEADER_THERMOMETER
+
 #include <stdio.h>
 #include <math.h>
 #include "pico/stdlib.h"
@@ -15,3 +18,7 @@
 /* 関数定義 */
 void tem_init();            /* 温度測定の初期化を行う */
 float tem_gettemp_cel();    /* 温度を取得する(℃)    */
+void tem_start();           /* 温度取得用タイマーを開始する */
+void tem_stop();            /* 温度取得用タイマーを止める */
+
+#endif  //_HEADER_THERMOMETER

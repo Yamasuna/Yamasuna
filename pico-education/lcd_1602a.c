@@ -1,7 +1,4 @@
 #include "lcd_1602a.h"
-#include "pico/stdlib.h"
-#include "hardware/i2c.h"
-#include "pico/binary_info.h"
 
 /******************/
 /* LCDコマンド定義 */
@@ -156,6 +153,20 @@ void lcd_setcursor(int line, int position)
     }
 
     lcd_send_byte(val, LCD_I2C_COMMAND);
+}
+
+/* 指定した位置のカーソル位置の桁をブリンク設定を行う */
+void lcd_setblink(int line, int position, bool isblink)
+{
+    uint8_t setting;
+
+    setting = LCD_DISPLAYCONTROL | LCD_DISPON | LCD_CURSORON | isblink;
+
+    /* 指定位置にカーソル位置を移動 */
+    lcd_setcursor(line, position);
+
+    /* ブリンク設定 */
+    lcd_send_byte(setting, LCD_I2C_COMMAND);
 }
 
 /* LCDに文字列を出力する */

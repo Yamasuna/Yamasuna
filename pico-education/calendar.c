@@ -185,8 +185,8 @@ void cal_init()
     calendar.cal_time.minute = DEFAULT_MINUTE;
     calendar.cal_time.second = DEFAULT_SECOND;
 
-    /* タイマーコールバック設定(1秒毎) */
-    add_repeating_timer_ms(1000, repeating_timer1sec_callback, NULL, &sec_timer);
+    /* カレンダータイマー開始 */
+    cal_startcalendar();
 }
 
 /* カレンダー情報を取得する */
@@ -199,4 +199,140 @@ calendar_t *cal_getinfo()
 char *cal_getweekofdays_str(uint8_t weekofday)
 {
     return days_of_week_str[weekofday];
+}
+
+/* カレンダーのタイマーを開始する */
+void cal_startcalendar()
+{
+    /* タイマーコールバック設定(1秒毎) */
+    add_repeating_timer_ms(1000, repeating_timer1sec_callback, NULL, &sec_timer);
+}
+
+/* カレンダーのタイマーを止める */
+void cal_stopcalendar()
+{
+    cancel_repeating_timer(&sec_timer);
+
+    /* 秒設定はデフォルト値からにリセットする */
+    calendar.cal_time.second = DEFAULT_SECOND;
+}
+
+/* カレンダー設定用　西暦設定を1年進める */
+void cal_increment_year()
+{
+    calendar_date_t* cal_date;
+    cal_date = &calendar.cal_date;
+
+    cal_date->year++;
+
+    /* 西暦の設定最大範囲を超えた場合は最小値に戻す */
+    if (cal_date->year > YEAR_MAX)
+    {
+        cal_date->year = YEAR_MIN;
+    }
+    else
+    {
+        /* 何もしない */
+    }
+
+    /* 曜日を求める */
+    cal_date->dayofweek = cal_weekofdays(cal_date->year, cal_date->month, cal_date->day);
+}
+
+/* カレンダー設定用　月設定を1月進める */
+void cal_increment_month()
+{
+    calendar_date_t* cal_date;
+    cal_date = &calendar.cal_date;
+
+    cal_date->month++;
+
+    /* 12月を超えた場合は1月に戻す */
+    if (cal_date->month > DECEMBER)
+    {
+        cal_date->month = JANUARY;
+    }
+    else
+    {
+        /* 何もしない */
+    }
+
+    /* 曜日を求める */
+    cal_date->dayofweek = cal_weekofdays(cal_date->year, cal_date->month, cal_date->day);
+}
+
+/* カレンダー設定用　日設定を1日進める */
+void cal_increment_day()
+{
+    calendar_date_t* cal_date;
+    cal_date = &calendar.cal_date;
+
+    cal_date->day++;
+
+    /* 閏年かチェック */
+    if ( cal_judge_leap_year(cal_date->year) )
+    {
+        /* 日付を更新した結果、当月の日数を超えた場合、1日に戻す(閏年) */
+        if( cal_date->day > days_per_month_leap_year[cal_date->month-1])
+        {
+            cal_date->day = 1;
+        }
+        else
+        {
+            /* 何もしない */
+        }
+    }
+    else
+    {
+        /* 日付を更新した結果、当月の日数を超えた場合、1日に戻す(閏年でない) */
+        if( cal_date->day > days_per_month[cal_date->month-1])
+        {
+            cal_date->day = 1;
+        }
+        else
+        {
+            /* 何もしない */
+        }
+    }
+
+    /* 曜日を求める */
+    cal_date->dayofweek = cal_weekofdays(cal_date->year, cal_date->month, cal_date->day);
+}
+
+/* カレンダー設定用　時間設定を1時間進める */
+void cal_increment_hour()
+{
+    calendar_time_t *cal_time;
+    cal_time = &calendar.cal_time;
+
+    cal_time->hour++;
+
+    /* 24時になった場合は0時に戻す */
+    if (cal_time->hour > 23)
+    {
+        cal_time->hour = 0;
+    }
+    else
+    {
+        /* 何もしない */
+    }
+}
+
+/* カレンダー設定用　分設定を1分進める */
+void cal_increment_minute()
+{
+    calendar_time_t *cal_time;
+    cal_time = &calendar.cal_time;
+
+    cal_time->minute++;
+
+    /* 60分になった場合は0分に戻す */
+    if (cal_time->minute > 59)
+    {
+        cal_time->minute = 0;
+    }
+    else
+    {
+        /* 何もしない */
+    }
 }

@@ -180,8 +180,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Suna/Documents/Pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c" "CMakeFiles/pico_education.dir/C_/Users/Suna/Documents/Pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj" "gcc" "CMakeFiles/pico_education.dir/C_/Users/Suna/Documents/Pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj.d"
   "C:/Users/Suna/Documents/Pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c" "CMakeFiles/pico_education.dir/C_/Users/Suna/Documents/Pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj" "gcc" "CMakeFiles/pico_education.dir/C_/Users/Suna/Documents/Pico/pico-sdk/src/rp2_common/pico_unique_id/unique_id.c.obj.d"
   "C:/Users/Suna/Documents/Pico/pico-education/calendar.c" "CMakeFiles/pico_education.dir/calendar.c.obj" "gcc" "CMakeFiles/pico_education.dir/calendar.c.obj.d"
+  "C:/Users/Suna/Documents/Pico/pico-education/display.c" "CMakeFiles/pico_education.dir/display.c.obj" "gcc" "CMakeFiles/pico_education.dir/display.c.obj.d"
   "C:/Users/Suna/Documents/Pico/pico-education/lcd_1602a.c" "CMakeFiles/pico_education.dir/lcd_1602a.c.obj" "gcc" "CMakeFiles/pico_education.dir/lcd_1602a.c.obj.d"
   "C:/Users/Suna/Documents/Pico/pico-education/main.c" "CMakeFiles/pico_education.dir/main.c.obj" "gcc" "CMakeFiles/pico_education.dir/main.c.obj.d"
+  "C:/Users/Suna/Documents/Pico/pico-education/mode.c" "CMakeFiles/pico_education.dir/mode.c.obj" "gcc" "CMakeFiles/pico_education.dir/mode.c.obj.d"
+  "C:/Users/Suna/Documents/Pico/pico-education/sw.c" "CMakeFiles/pico_education.dir/sw.c.obj" "gcc" "CMakeFiles/pico_education.dir/sw.c.obj.d"
   "C:/Users/Suna/Documents/Pico/pico-education/thermometer.c" "CMakeFiles/pico_education.dir/thermometer.c.obj" "gcc" "CMakeFiles/pico_education.dir/thermometer.c.obj.d"
   "C:/Users/Suna/Documents/Pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp" "CMakeFiles/pico_education.dir/C_/Users/Suna/Documents/Pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj" "gcc" "CMakeFiles/pico_education.dir/C_/Users/Suna/Documents/Pico/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj.d"
   )

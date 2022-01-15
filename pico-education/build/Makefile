@@ -1698,6 +1698,30 @@ calendar.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico_education.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico_education.dir\calendar.c.s
 .PHONY : calendar.c.s
 
+display.obj: display.c.obj
+.PHONY : display.obj
+
+# target to build an object file
+display.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico_education.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico_education.dir\display.c.obj
+.PHONY : display.c.obj
+
+display.i: display.c.i
+.PHONY : display.i
+
+# target to preprocess a source file
+display.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico_education.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico_education.dir\display.c.i
+.PHONY : display.c.i
+
+display.s: display.c.s
+.PHONY : display.s
+
+# target to generate assembly for a file
+display.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico_education.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico_education.dir\display.c.s
+.PHONY : display.c.s
+
 lcd_1602a.obj: lcd_1602a.c.obj
 .PHONY : lcd_1602a.obj
 
@@ -1745,6 +1769,54 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico_education.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico_education.dir\main.c.s
 .PHONY : main.c.s
+
+mode.obj: mode.c.obj
+.PHONY : mode.obj
+
+# target to build an object file
+mode.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico_education.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico_education.dir\mode.c.obj
+.PHONY : mode.c.obj
+
+mode.i: mode.c.i
+.PHONY : mode.i
+
+# target to preprocess a source file
+mode.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico_education.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico_education.dir\mode.c.i
+.PHONY : mode.c.i
+
+mode.s: mode.c.s
+.PHONY : mode.s
+
+# target to generate assembly for a file
+mode.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico_education.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico_education.dir\mode.c.s
+.PHONY : mode.c.s
+
+sw.obj: sw.c.obj
+.PHONY : sw.obj
+
+# target to build an object file
+sw.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico_education.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico_education.dir\sw.c.obj
+.PHONY : sw.c.obj
+
+sw.i: sw.c.i
+.PHONY : sw.i
+
+# target to preprocess a source file
+sw.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico_education.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico_education.dir\sw.c.i
+.PHONY : sw.c.i
+
+sw.s: sw.c.s
+.PHONY : sw.s
+
+# target to generate assembly for a file
+sw.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\pico_education.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\pico_education.dir\sw.c.s
+.PHONY : sw.c.s
 
 thermometer.obj: thermometer.c.obj
 .PHONY : thermometer.obj
@@ -1974,12 +2046,21 @@ help:
 	@echo ... calendar.obj
 	@echo ... calendar.i
 	@echo ... calendar.s
+	@echo ... display.obj
+	@echo ... display.i
+	@echo ... display.s
 	@echo ... lcd_1602a.obj
 	@echo ... lcd_1602a.i
 	@echo ... lcd_1602a.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... mode.obj
+	@echo ... mode.i
+	@echo ... mode.s
+	@echo ... sw.obj
+	@echo ... sw.i
+	@echo ... sw.s
 	@echo ... thermometer.obj
 	@echo ... thermometer.i
 	@echo ... thermometer.s

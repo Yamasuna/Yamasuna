@@ -6,6 +6,9 @@
         "cstdio": "c",
         "stdio.h": "c",
         "calendar.h": "c",
-        "thermometer.h": "c"
+        "thermometer.h": "c",
+        "mode.h": "c",
+        "display.h": "c",
+        "sw.h": "c"
     }
 }

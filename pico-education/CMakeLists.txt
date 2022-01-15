@@ -14,10 +14,14 @@ pico_sdk_init()
 
 #Add an executable target to be build from the source files
 add_executable(pico_education 
-                main.c 
-                lcd_1602a.c 
-                calendar.c 
-                thermometer.c)
+               main.c 
+               lcd_1602a.c 
+               calendar.c 
+               thermometer.c
+               sw.c
+               mode.c
+               display.c
+              )
 
 # pull in common dependencies and additional i2c hardware support
 target_link_libraries(pico_education 

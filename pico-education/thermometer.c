@@ -42,12 +42,25 @@ void tem_init()
     /* 初回温度測定 */
     tem_measure_temp();
 
-    /* タイマーコールバック設定(1分毎) */
-    add_repeating_timer_ms(60*1000, repeating_timer1min_callback, NULL, &min_timer);
+    /* 温度取得開始 */
+    tem_start();
 }
 
 /* 温度を取得する(℃)    */
 float tem_gettemp_cel()
 {
     return tem_temp_cel;
+}
+
+/* 温度取得用タイマーを開始する */
+void tem_start()
+{
+    /* タイマーコールバック設定(1分毎) */
+    add_repeating_timer_ms(60*1000, repeating_timer1min_callback, NULL, &min_timer);
+}
+
+/* 温度取得用タイマーを止める */
+void tem_stop()
+{
+    cancel_repeating_timer(&min_timer);
 }

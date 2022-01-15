@@ -2980,6 +2980,91 @@ CMakeFiles\pico_education.dir\calendar.c.obj: C:\Users\Suna\Documents\Pico\pico-
 CMakeFiles\pico_education.dir\calendar.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
 
 
+CMakeFiles\pico_education.dir\display.c.obj: ..\display.c
+CMakeFiles\pico_education.dir\display.c.obj: ..\display.h
+CMakeFiles\pico_education.dir\display.c.obj: ..\calendar.h
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\stdio.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\_ansi.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\newlib.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\_newlib_version.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\config.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\ieeefp.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\features.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\cdefs.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\_default_types.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdarg.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\reent.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\_ansi.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_types.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\_types.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\lock.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\types.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_stdint.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\endian.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\_endian.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\select.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_sigset.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_timeval.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\timespec.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_timespec.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_pthreadtypes.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\sched.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\types.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\stdio.h"
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_stdlib\include\pico\stdlib.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\assert.h
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\assert.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\stdint.h"
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_intsup.h"
+CMakeFiles\pico_education.dir\display.c.obj: generated\pico_base\pico\version.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\config.h
+CMakeFiles\pico_education.dir\display.c.obj: generated\pico_base\pico\config_autogen.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\boards\include\boards\pico.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\cmsis\include\cmsis\rename_exceptions.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\pico_platform\include\pico\platform.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\platform_defs.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\error.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_time\include\pico\time.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_timer\include\hardware\timer.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\timer.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_base\include\hardware\address_mapped.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\addressmap.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\timer.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_gpio\include\hardware\gpio.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\sio.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\interp.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\padsbank0.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\pads_bank0.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_uart\include\hardware\uart.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\uart.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\dreq.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
+CMakeFiles\pico_education.dir\display.c.obj: ..\thermometer.h
+CMakeFiles\pico_education.dir\display.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\math.h"
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_adc\include\hardware\adc.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\adc.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\adc.h
+CMakeFiles\pico_education.dir\display.c.obj: ..\lcd_1602a.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_i2c\include\hardware\i2c.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\i2c.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\i2c.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\defs.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\structure.h
+CMakeFiles\pico_education.dir\display.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\code.h
+CMakeFiles\pico_education.dir\display.c.obj: ..\mode.h
+CMakeFiles\pico_education.dir\display.c.obj: ..\sw.h
+
+
 CMakeFiles\pico_education.dir\lcd_1602a.c.obj: ..\lcd_1602a.c
 CMakeFiles\pico_education.dir\lcd_1602a.c.obj: ..\lcd_1602a.h
 CMakeFiles\pico_education.dir\lcd_1602a.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_stdlib\include\pico\stdlib.h
@@ -3067,7 +3152,6 @@ CMakeFiles\pico_education.dir\main.c.obj: "C:\Program Files (x86)\GNU Arm Embedd
 CMakeFiles\pico_education.dir\main.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\sched.h"
 CMakeFiles\pico_education.dir\main.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\types.h"
 CMakeFiles\pico_education.dir\main.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\stdio.h"
-CMakeFiles\pico_education.dir\main.c.obj: ..\lcd_1602a.h
 CMakeFiles\pico_education.dir\main.c.obj: ..\calendar.h
 CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_stdlib\include\pico\stdlib.h
 CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico.h
@@ -3110,6 +3194,162 @@ CMakeFiles\pico_education.dir\main.c.obj: "C:\Program Files (x86)\GNU Arm Embedd
 CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_adc\include\hardware\adc.h
 CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\adc.h
 CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\adc.h
+CMakeFiles\pico_education.dir\main.c.obj: ..\sw.h
+CMakeFiles\pico_education.dir\main.c.obj: ..\mode.h
+CMakeFiles\pico_education.dir\main.c.obj: ..\display.h
+CMakeFiles\pico_education.dir\main.c.obj: ..\lcd_1602a.h
+CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_i2c\include\hardware\i2c.h
+CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\i2c.h
+CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\i2c.h
+CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info.h
+CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\defs.h
+CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\structure.h
+CMakeFiles\pico_education.dir\main.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include\pico\binary_info\code.h
+
+
+CMakeFiles\pico_education.dir\mode.c.obj: ..\mode.c
+CMakeFiles\pico_education.dir\mode.c.obj: ..\mode.h
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\stdio.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\_ansi.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\newlib.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\_newlib_version.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\config.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\ieeefp.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\features.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\cdefs.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\_default_types.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdarg.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\reent.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\_ansi.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_types.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\_types.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\lock.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\types.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_stdint.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\endian.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\_endian.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\select.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_sigset.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_timeval.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\timespec.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_timespec.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_pthreadtypes.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\sched.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\types.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\stdio.h"
+CMakeFiles\pico_education.dir\mode.c.obj: ..\sw.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_stdlib\include\pico\stdlib.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\assert.h
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\assert.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\stdint.h"
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_intsup.h"
+CMakeFiles\pico_education.dir\mode.c.obj: generated\pico_base\pico\version.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\config.h
+CMakeFiles\pico_education.dir\mode.c.obj: generated\pico_base\pico\config_autogen.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\boards\include\boards\pico.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\cmsis\include\cmsis\rename_exceptions.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\pico_platform\include\pico\platform.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\platform_defs.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\error.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_time\include\pico\time.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_timer\include\hardware\timer.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\timer.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_base\include\hardware\address_mapped.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\addressmap.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\timer.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_gpio\include\hardware\gpio.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\sio.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\interp.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\padsbank0.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\pads_bank0.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_uart\include\hardware\uart.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\uart.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\dreq.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
+CMakeFiles\pico_education.dir\mode.c.obj: ..\calendar.h
+CMakeFiles\pico_education.dir\mode.c.obj: ..\thermometer.h
+CMakeFiles\pico_education.dir\mode.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\math.h"
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_adc\include\hardware\adc.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\adc.h
+CMakeFiles\pico_education.dir\mode.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\adc.h
+
+
+CMakeFiles\pico_education.dir\sw.c.obj: ..\sw.c
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\stdio.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\_ansi.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\newlib.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\_newlib_version.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\config.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\ieeefp.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\features.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\cdefs.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\_default_types.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdarg.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\reent.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\_ansi.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_types.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\_types.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\lock.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\types.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_stdint.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\endian.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\_endian.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\select.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_sigset.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_timeval.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\timespec.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_timespec.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_pthreadtypes.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\sched.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\machine\types.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\stdio.h"
+CMakeFiles\pico_education.dir\sw.c.obj: ..\sw.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_stdlib\include\pico\stdlib.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\assert.h
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdbool.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\assert.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\stdint.h"
+CMakeFiles\pico_education.dir\sw.c.obj: "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\sys\_intsup.h"
+CMakeFiles\pico_education.dir\sw.c.obj: generated\pico_base\pico\version.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\config.h
+CMakeFiles\pico_education.dir\sw.c.obj: generated\pico_base\pico\config_autogen.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\boards\include\boards\pico.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\cmsis\include\cmsis\rename_exceptions.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\pico_platform\include\pico\platform.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\platform_defs.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\types.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include\pico\error.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\pico_stdio\include\pico\stdio.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_time\include\pico\time.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_timer\include\hardware\timer.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\timer.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_base\include\hardware\address_mapped.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\addressmap.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\timer.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_gpio\include\hardware\gpio.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\sio.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\sio.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\interp.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\padsbank0.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\pads_bank0.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_uart\include\hardware\uart.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include\hardware\structs\uart.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\uart.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\dreq.h
+CMakeFiles\pico_education.dir\sw.c.obj: C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\pico_stdio_usb\include\pico\stdio_usb.h
 
 
 CMakeFiles\pico_education.dir\thermometer.c.obj: ..\thermometer.c
@@ -3436,6 +3676,8 @@ C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\
 
 C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_resets\include\hardware\resets.h:
 
+..\mode.c:
+
 C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include\hardware\regs\resets.h:
 
 "C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\arm-none-eabi\include\stdlib.h":
@@ -3654,10 +3896,20 @@ C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\pico_unique_id\unique_id.c:
 
 ..\calendar.h:
 
-..\lcd_1602a.c:
+..\display.c:
+
+..\display.h:
+
+..\thermometer.h:
 
 ..\lcd_1602a.h:
 
-..\thermometer.h:
+..\mode.h:
+
+..\sw.h:
+
+..\lcd_1602a.c:
+
+..\sw.c:
 
 ..\thermometer.c:

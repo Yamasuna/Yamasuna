@@ -29,7 +29,6 @@ CMakeFiles\pico_education.dir\main.c.obj: \
  c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\sched.h \
  c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\machine\types.h \
  c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\sys\stdio.h \
- C:\Users\Suna\Documents\Pico\pico-education\lcd_1602a.h \
  C:\Users\Suna\Documents\Pico\pico-education\calendar.h \
  C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_stdlib\include/pico/stdlib.h \
  C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_base\include/pico.h \
@@ -71,4 +70,15 @@ CMakeFiles\pico_education.dir\main.c.obj: \
  c:\progra~2\gnuarm~1\102021~1.10\arm-none-eabi\include\math.h \
  C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_adc\include/hardware/adc.h \
  C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/adc.h \
- C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/adc.h
+ C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/adc.h \
+ C:\Users\Suna\Documents\Pico\pico-education\sw.h \
+ C:\Users\Suna\Documents\Pico\pico-education\mode.h \
+ C:\Users\Suna\Documents\Pico\pico-education\display.h \
+ C:\Users\Suna\Documents\Pico\pico-education\lcd_1602a.h \
+ C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2_common\hardware_i2c\include/hardware/i2c.h \
+ C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_structs\include/hardware/structs/i2c.h \
+ C:\Users\Suna\Documents\Pico\pico-sdk\src\rp2040\hardware_regs\include/hardware/regs/i2c.h \
+ C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info.h \
+ C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/defs.h \
+ C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/structure.h \
+ C:\Users\Suna\Documents\Pico\pico-sdk\src\common\pico_binary_info\include/pico/binary_info/code.h
