@@ -131,7 +131,7 @@ static void mcp2515_init()
     uint8_t buf_size;
     
     /* バッファ初期化 */
-    buf_size = sizeof(mcp2515_inst_buf) / sizeof(mcp2515_inst_buf[0]);
+    buf_size = (uint8_t)(sizeof(mcp2515_inst_buf) / sizeof(mcp2515_inst_buf[0]));
     for (buf_idx = 0u; buf_idx < buf_size; buf_size++)
     {
         mcp2515_inst_buf[buf_idx] = 0x00u;
@@ -201,7 +201,6 @@ static void mcp2515_reg_write(uint8_t reg_addr, uint8_t write_val)
 static void mcp2515_tx_buf_write(uint8_t buf_no, uint8_t *data, uint8_t size)
 {
     mcp2515_cs_disable();
-    spi_write_blocking(spi0, )
 }
 
 static void mcp2515_reg_read(uint8_t reg_addr, uint8_t *read_val)
@@ -267,9 +266,7 @@ static void mcp2515_can_send()
     {
         mcp2515_reg_read(MCP2515_REG_ADDR_TXB0CTRL, &reg_TxB0CTRL);
     }
-
 }
-    
 
 static bool repeating_timer1sec_callback(struct repeating_timer *t)
 {
@@ -327,8 +324,7 @@ void main(void)
             mcp2515_reg_write(MCP2515_REG_ADDR_BFPCTRL, MCP2515_RX1BF_LOW);
             out_RX1BF = PIN_LOW;
         }
-        
-        sleep_ms(1000u);
         #endif
+        sleep_ms(1000u);
     }
 }
