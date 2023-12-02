@@ -74,6 +74,16 @@ typedef enum MCP2515_INSTRUCTION {
   MCP2515_INSTRUCTION_MAX
 } MCP2515_INSTRUCTION_T;
 
+/* MCP2515 TXバッファ番号 */
+typedef enum MCP2515_TXBUFNUM {
+  MCP2515_TXBUFNUM_TXB0SIDH,   /* TXバッファ0 TXB0SIDH */
+  MCP2515_TXBUFNUM_TXB0D0,     /* TXバッファ0 TXB0D0   */
+  MCP2515_TXBUFNUM_TXB1SIDH,   /* TXバッファ1 TXB1SIDH */
+  MCP2515_TXBUFNUM_TXB1D0,     /* TXバッファ1 TXB1D0   */
+  MCP2515_TXBUFNUM_TXB2SIDH,   /* TXバッファ2 TXB2SIDH */
+  MCP2515_TXBUFNUM_TXB2D0      /* TXバッファ2 TXB2D0   */
+} MCP2515_TXBUFNUM_T;
+
 /* MCP2515 SPI命令セット */
 typedef struct MCP2515_INSTRUCTION_SET
 {
@@ -113,15 +123,17 @@ static uint8_t     mcp2515_inst_buf[256u];   /* MCP2515命令送信用バッフ�
 struct repeating_timer sec_timer;  /* 1秒タイマー     */
 
 /* 関数プロトタイプ */
-static void mcp2515_init();                                     /* MCP2515の初期化を行う */
-static void mcp2515_cs_enable();                                /* CS信号のEnableを行う  */
-static void mcp2515_cs_disable();                               /* CS信号のDisableを行う */
-static void mcp2515_reset();                                    /* MCP2515のリセットを行う */
-static void mcp2515_reg_write(uint8_t reg_addr, uint8_t write_val);   /* MCP2515のレジスタ書き込み */
-static void mcp2515_tx_buf_write(uint8_t buf_no, uint8_t *data, uint8_t size);  /* MCP2515送信バッファ書き込み */
-static void mcp2515_reg_read(uint8_t reg_addr, uint8_t *read_val);   /* MCP2515のレジスタ読み込み */
+static void mcp2515_init();                                                                     /* MCP2515の初期化を行う */
+static void mcp2515_cs_enable();                                                                /* CS信号のEnableを行う  */
+static void mcp2515_cs_disable();                                                               /* CS信号のDisableを行う */
+static void mcp2515_reset();                                                                    /* MCP2515のリセットを行う */
+static void mcp2515_reg_write(uint8_t reg_addr, uint8_t write_val);                             /* MCP2515のレジスタ書き込み */
+static void mcp2515_tx_buf_write(MCP2515_TXBUFNUM_T buf_no, uint8_t *data, uint8_t size);       /* MCP2515送信バッファ書き込み */
+static void mcp2515_reg_read(uint8_t reg_addr, uint8_t *read_val);                              /* MCP2515のレジスタ読み込み */
 static void mcp2515_reg_bit_change(uint8_t reg_addr, uint8_t mask, uint8_t val);
-static void mcp2515_can_send();                                 /* MCP2515でCAN送信を行う */
+static void mcp2515_can_send();                                                                 /* MCP2515でCAN送信を行う */
+
+static uint8_t mcp2515_get_tx_buf_instcode(MCP2515_TXBUFNUM_T buf_no);                          /* 指定したバッファ番号の命令コードを得る */
 
 static bool repeating_timer1sec_callback(struct repeating_timer *t); /* 1秒毎のタイマー割込み発生時の処理 */
 
@@ -198,8 +210,23 @@ static void mcp2515_reg_write(uint8_t reg_addr, uint8_t write_val)
     mcp2515_cs_disable();
 }
 
-static void mcp2515_tx_buf_write(uint8_t buf_no, uint8_t *data, uint8_t size)
+static void mcp2515_tx_buf_write(MCP2515_TXBUFNUM_T buf_no, uint8_t *data, uint8_t size)
 {
+    uint8_t inst_code;
+    uint8_t inst_size;
+
+    inst_code = mcp2515_get_tx_buf_instcode(buf_no);
+    inst_size = size + 1u;
+
+    mcp2515_inst_buf[0] = inst_code;
+
+    for(uint8_t idx = 0; idx < size; idx++)
+    {
+        mcp2515_inst_buf[1 + idx] = data[idx];
+    }
+    
+    mcp2515_cs_disable();
+    spi_write_blocking(spi0, &mcp2515_inst_buf[0], inst_size);
     mcp2515_cs_disable();
 }
 
@@ -211,7 +238,8 @@ static void mcp2515_reg_read(uint8_t reg_addr, uint8_t *read_val)
     inst_size           = mcp2515_instruction[MCP2515_REG_READ].inst_size;
 
     mcp2515_cs_enable();
-    spi_write_read_blocking(spi0, &mcp2515_inst_buf[0], read_val, inst_size);
+    spi_write_blocking(spi0, &mcp2515_inst_buf[0], inst_size);
+    spi_read_blocking(spi0, 0, read_val, 1u);
     mcp2515_cs_disable();
 }
 
@@ -233,45 +261,97 @@ static void mcp2515_can_send()
 {
     uint8_t reg_TxB0CTRL;
     uint8_t inst_size;
+    uint8_t reg_val;
+    uint8_t tx_buf[13];
  
     reg_TxB0CTRL = 0x00u;
 
-    /* 送信バッファ設定 */
-    mcp2515_inst_buf[0] = mcp2515_instruction[MCP2515_TX_BUF_WRITE_TXB0SIDH].inst_code;
-    mcp2515_inst_buf[1] = 0x20u;    /* TXB0SIDH */
-    mcp2515_inst_buf[2] = 0x00u;    /* TXB0SIDL */
-    mcp2515_inst_buf[3] = 0x00u;    /* TXB0EID8 */
-    mcp2515_inst_buf[4] = 0x00u;    /* TXB0EID0 */
-    mcp2515_inst_buf[5] = 0x08u;    /* TXB0DLC  */
-    mcp2515_inst_buf[6] = 0x11u;    /* TXB0D0   */
-    mcp2515_inst_buf[7] = 0x22u;    /* TXB0D1   */
-    mcp2515_inst_buf[8] = 0x33u;    /* TXB0D2   */
-    mcp2515_inst_buf[9] = 0x44u;    /* TXB0D3   */
-    mcp2515_inst_buf[10] = 0x55u;   /* TXB0D4   */
-    mcp2515_inst_buf[11] = 0x66u;   /* TXB0D5   */
-    mcp2515_inst_buf[12] = 0x77u;   /* TXB0D6   */
-    mcp2515_inst_buf[13] = 0x88u;   /* TXB0D7   */
-    inst_size = 14u;
+    /* 送信バッファデータ設定 */
+    tx_buf[0]  = 0x20u;    /* TXB0SIDH */
+    tx_buf[1]  = 0x00u;    /* TXB0SIDL */
+    tx_buf[2]  = 0x00u;    /* TXB0EID8 */
+    tx_buf[3]  = 0x00u;    /* TXB0EID0 */
+    tx_buf[4]  = 0x05u;    /* TXB0DLC  */
+    tx_buf[5]  = 0x11u;    /* TXB0D0   */
+    tx_buf[6]  = 0x22u;    /* TXB0D1   */
+    tx_buf[7]  = 0x33u;    /* TXB0D2   */
+    tx_buf[8]  = 0x44u;    /* TXB0D3   */
+    tx_buf[9]  = 0x55u;    /* TXB0D4   */
+    tx_buf[10] = 0x66u;    /* TXB0D5   */
+    tx_buf[11] = 0x77u;    /* TXB0D6   */
+    tx_buf[12] = 0x88u;    /* TXB0D7   */
+    inst_size = 13u;
 
-    mcp2515_cs_enable();
-    spi_write_blocking(spi0, &mcp2515_inst_buf[0], inst_size);
-    mcp2515_cs_disable();
+    //mcp2515_tx_buf_write(MCP2515_TX_BUF_WRITE_TXB0SIDH, &tx_buf[0], inst_size);
+    for(uint8_t idx = 0; idx < inst_size; idx++)
+    {
+        mcp2515_reg_write(MCP2515_REG_ADDR_TXB0SIDH + idx, tx_buf[idx]);
+    }
+    //mcp2515_reg_write(MCP2515_REG_ADDR_TXB0DLC, 0x08u);
 
+    //mcp2515_reg_read(MCP2515_REG_ADDR_TXB0DLC, &reg_val);
+    //mcp2515_reg_read(MCP2515_REG_ADDR_TXB0SIDH, &reg_val);
+    printf("******\n");
+    for(uint8_t idx = 0; idx < inst_size; idx++)
+    {
+        mcp2515_reg_read(MCP2515_REG_ADDR_TXB0SIDH + idx, &reg_val);
+        printf("read_reg[%d]:0x%02x\n", idx, reg_val);
+    }
+    printf("******\n");
+    //printf("TXB0DLC:0x%02x\n", reg_val);
 
     /* TXB0CTRL.TXREQビット=1 */
-    mcp2515_reg_bit_change(MCP2515_REG_ADDR_TXB0CTRL, 0x08u, 0x08u);
+    //mcp2515_reg_bit_change(MCP2515_REG_ADDR_TXB0CTRL, 0x08u, 0x08u);
 
+
+
+#if 0
     /* TXB0CTRL.TXREQビットが0(送信完了)になるまで待つ */
     while ( (reg_TxB0CTRL & 0x08u) == 0x08u)
     {
         mcp2515_reg_read(MCP2515_REG_ADDR_TXB0CTRL, &reg_TxB0CTRL);
     }
+#endif
+}
+
+static uint8_t mcp2515_get_tx_buf_instcode(MCP2515_TXBUFNUM_T buf_no)
+{
+    uint8_t inst_code;
+
+    switch(buf_no)
+    {
+        case MCP2515_TXBUFNUM_TXB0SIDH:
+            inst_code = mcp2515_instruction[MCP2515_TX_BUF_WRITE_TXB0SIDH].inst_code;
+            break;
+        case MCP2515_TXBUFNUM_TXB0D0:
+            inst_code = mcp2515_instruction[MCP2515_TX_BUF_WRITE_TXB0D0].inst_code;
+            break;
+        case MCP2515_TXBUFNUM_TXB1SIDH:
+            inst_code = mcp2515_instruction[MCP2515_TX_BUF_WRITE_TXB1SIDH].inst_code;
+            break;
+        case MCP2515_TXBUFNUM_TXB1D0:
+            inst_code = mcp2515_instruction[MCP2515_TX_BUF_WRITE_TXB1D0].inst_code;
+            break;
+        case MCP2515_TXBUFNUM_TXB2SIDH:
+            inst_code = mcp2515_instruction[MCP2515_TX_BUF_WRITE_TXB2SIDH].inst_code;
+            break;
+        case MCP2515_TXBUFNUM_TXB2D0:
+            inst_code = mcp2515_instruction[MCP2515_TX_BUF_WRITE_TXB2D0].inst_code;
+            break;
+        default:
+            inst_code = mcp2515_instruction[MCP2515_TX_BUF_WRITE_TXB0SIDH].inst_code;
+            break;
+    }
+
+    return inst_code;
 }
 
 static bool repeating_timer1sec_callback(struct repeating_timer *t)
 {
     static uint8_t out_RX1BF = PIN_LOW;
            uint8_t output_state;
+
+           uint8_t reg_val;
 
     if (out_RX1BF == PIN_LOW)
     {
@@ -287,6 +367,9 @@ static bool repeating_timer1sec_callback(struct repeating_timer *t)
 
     mcp2515_reg_write(MCP2515_REG_ADDR_BFPCTRL, output_state);
 
+    mcp2515_reg_read(MCP2515_REG_ADDR_BFPCTRL, &reg_val);
+    printf("BFPCTRL:%02x\n", reg_val);
+    printf("output_state:%02x\n", output_state);
     return true;
 }
 
@@ -308,7 +391,7 @@ void main(void)
     mcp2515_init();
 
     /* 1秒タイマ起動 */
-    add_repeating_timer_ms(1000, repeating_timer1sec_callback, NULL, &sec_timer);
+    //add_repeating_timer_ms(1000, repeating_timer1sec_callback, NULL, &sec_timer);
 
     //Loop
     while (true)
@@ -325,6 +408,7 @@ void main(void)
             out_RX1BF = PIN_LOW;
         }
         #endif
+        mcp2515_can_send();
         sleep_ms(1000u);
     }
 }
