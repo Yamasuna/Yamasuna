@@ -225,7 +225,7 @@ static void mcp2515_tx_buf_write(MCP2515_TXBUFNUM_T buf_no, uint8_t *data, uint8
         mcp2515_inst_buf[1 + idx] = data[idx];
     }
     
-    mcp2515_cs_disable();
+    mcp2515_cs_enable();
     spi_write_blocking(spi0, &mcp2515_inst_buf[0], inst_size);
     mcp2515_cs_disable();
 }
@@ -271,26 +271,29 @@ static void mcp2515_can_send()
     tx_buf[1]  = 0x00u;    /* TXB0SIDL */
     tx_buf[2]  = 0x00u;    /* TXB0EID8 */
     tx_buf[3]  = 0x00u;    /* TXB0EID0 */
-    tx_buf[4]  = 0x05u;    /* TXB0DLC  */
-    tx_buf[5]  = 0x11u;    /* TXB0D0   */
-    tx_buf[6]  = 0x22u;    /* TXB0D1   */
-    tx_buf[7]  = 0x33u;    /* TXB0D2   */
-    tx_buf[8]  = 0x44u;    /* TXB0D3   */
-    tx_buf[9]  = 0x55u;    /* TXB0D4   */
-    tx_buf[10] = 0x66u;    /* TXB0D5   */
-    tx_buf[11] = 0x77u;    /* TXB0D6   */
-    tx_buf[12] = 0x88u;    /* TXB0D7   */
+    tx_buf[4]  = 0x08u;    /* TXB0DLC  */
+    tx_buf[5]  = 0xAAu;    /* TXB0D0   */
+    tx_buf[6]  = 0xBBu;    /* TXB0D1   */
+    tx_buf[7]  = 0xCCu;    /* TXB0D2   */
+    tx_buf[8]  = 0xDDu;    /* TXB0D3   */
+    tx_buf[9]  = 0xEEu;    /* TXB0D4   */
+    tx_buf[10] = 0xFFu;    /* TXB0D5   */
+    tx_buf[11] = 0x11u;    /* TXB0D6   */
+    tx_buf[12] = 0x22u;    /* TXB0D7   */
     inst_size = 13u;
 
-    //mcp2515_tx_buf_write(MCP2515_TX_BUF_WRITE_TXB0SIDH, &tx_buf[0], inst_size);
+    mcp2515_tx_buf_write(MCP2515_TX_BUF_WRITE_TXB0SIDH, &tx_buf[0], inst_size);
+    #if 0
     for(uint8_t idx = 0; idx < inst_size; idx++)
     {
         mcp2515_reg_write(MCP2515_REG_ADDR_TXB0SIDH + idx, tx_buf[idx]);
     }
+    #endif
     //mcp2515_reg_write(MCP2515_REG_ADDR_TXB0DLC, 0x08u);
 
     //mcp2515_reg_read(MCP2515_REG_ADDR_TXB0DLC, &reg_val);
     //mcp2515_reg_read(MCP2515_REG_ADDR_TXB0SIDH, &reg_val);
+#if 1
     printf("******\n");
     for(uint8_t idx = 0; idx < inst_size; idx++)
     {
@@ -298,6 +301,7 @@ static void mcp2515_can_send()
         printf("read_reg[%d]:0x%02x\n", idx, reg_val);
     }
     printf("******\n");
+#endif
     //printf("TXB0DLC:0x%02x\n", reg_val);
 
     /* TXB0CTRL.TXREQビット=1 */
