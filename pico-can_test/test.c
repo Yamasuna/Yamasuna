@@ -23,12 +23,18 @@
 #define MCP2515_RX1BF_LOW   (0x08u)     /* RX1BF端子 Low出力  */
 
 /* MCP2515レジスタアドレス */
+#define MCP2515_REG_ADDR_RXF0SIDH       (0x00u)     /* RXF0SIDH */
+#define MCP2515_REG_ADDR_RXF0SIDL       (0x01u)     /* RXF0SIDL */
 #define MCP2515_REG_ADDR_BFPCTRL        (0x0Cu)     /* BFPCTRL */
 #define MCP2515_REG_ADDR_TXRTSCTRL      (0x0Du)     /* TXRTSCTRL */
 #define MCP2515_REG_ADDR_TXB0_CANSTAT   (0x0Eu)     /* TXB0_CANSTAT */
 #define MCP2515_REG_ADDR_TXB0_CANCTRL   (0x0Fu)     /* TXB0_CANCTRL */
 #define MCP2515_REG_ADDR_TEC            (0x1Cu)     /* TEC */
 #define MCP2515_REG_ADDR_REC            (0x1Du)     /* REC */
+#define MCP2515_REG_ADDR_RXM0SIDH       (0x20u)     /* RXM0SIDH */
+#define MCP2515_REG_ADDR_RXM0SIDL       (0x21u)     /* RXM0SIDL */
+#define MCP2515_REG_ADDR_RXM0EID8       (0x22u)     /* RXM0EID8 */
+#define MCP2515_REG_ADDR_RXM0EID0       (0x23u)     /* RXM0EID0 */
 #define MCP2515_REG_ADDR_CNF3           (0x28u)     /* CNF3 */
 #define MCP2515_REG_ADDR_CNF2           (0x29u)     /* CNF2 */
 #define MCP2515_REG_ADDR_CNF1           (0x2Au)     /* CNF1 */
@@ -51,6 +57,10 @@
 #define MCP2515_REG_ADDR_TXB2DLC        (0x55u)     /* TXB2DLC  */
 #define MCP2515_REG_ADDR_TXB2D0         (0x56u)     /* TXB2D0   */
 #define MCP2515_REG_ADDR_RXB0CTRL       (0x60u)     /* RXB0CTRL */
+#define MCP2515_REG_ADDR_RXB0SIDH       (0x61u)     /* RXB0SIDH */
+#define MCP2515_REG_ADDR_RXB0SIDL       (0x62u)     /* RXB0SIDL */
+#define MCP2515_REG_ADDR_RXB0DLC        (0x65u)     /* RXB0DLC  */
+#define MCP2515_REG_ADDR_RXB0D0         (0x66u)     /* RXB0D0   */
 #define MCP2515_REG_ADDR_RXB1CTRL       (0x70u)     /* RXB1CTRL */
 
 /* MCP2515 SPI命令種類 */
@@ -136,11 +146,12 @@ static void mcp2515_tx_buf_write(MCP2515_TXBUFNUM_T buf_no, uint8_t *data, uint8
 static void mcp2515_reg_read(uint8_t reg_addr, uint8_t *read_val);                              /* MCP2515のレジスタ読み込み */
 static void mcp2515_reg_bit_change(uint8_t reg_addr, uint8_t mask, uint8_t val);
 static void mcp2515_can_send();                                                                 /* MCP2515でCAN送信を行う */
+static void mcp2515_can_recv();                                                                 /* MCP2515でCAN受信を行う */
 static void mcp2515_txb0_send_request();                                                        /* TXB0送信要求命令 */
-
 static uint8_t mcp2515_get_tx_buf_instcode(MCP2515_TXBUFNUM_T buf_no);                          /* 指定したバッファ番号の命令コードを得る */
 
 static bool repeating_timer1sec_callback(struct repeating_timer *t); /* 1秒毎のタイマー割込み発生時の処理 */
+static bool mcp2515_is_rxb0_receive();                                                          /* RXB0バッファが受信したかチェックする */
 
 static void mcp2515_init()
 {
@@ -158,10 +169,10 @@ static void mcp2515_init()
     spi_init(spi0, SPI_BAUDRATE_1MHZ);
 
     // Set SPI format
-    spi_set_format( spi0,   // SPI instance
-                    8,      // Number of bits per transfer
-                    0,      // Polarity (CPOL)
-                    0,      // Phase (CPHA)
+    spi_set_format( spi0,            // SPI instance
+                    8,               // Number of bits per transfer
+                    SPI_CPOL_0,      // Polarity (CPOL)
+                    SPI_CPHA_0,      // Phase (CPHA)
                     SPI_MSB_FIRST);
 
     /* ポートの初期化 */
@@ -190,11 +201,30 @@ static void mcp2515_init()
     /* BaudRate設定 */
     mcp2515_set_baudrate();
 
-    /* 通常モードに設定 */
-    //mcp2515_reg_write(MCP2515_REG_ADDR_TXB0_CANCTRL, 0x00u);
+    /* 受信フィルタ設定 */
+    mcp2515_reg_write(MCP2515_REG_ADDR_RXF0SIDH, 0x24u);    /* RXF0SIDH */
+    mcp2515_reg_write(MCP2515_REG_ADDR_RXF0SIDL, 0x80u);    /* RXF0SIDL */
+    mcp2515_reg_write(MCP2515_REG_ADDR_RXM0SIDH, 0x00u);    /* RXM0SIDH */
+    mcp2515_reg_write(MCP2515_REG_ADDR_RXM0SIDL, 0x00u);    /* RXM0SIDL */
+    mcp2515_reg_write(MCP2515_REG_ADDR_RXM0EID8, 0xFFu);    /* RXM0EID8 */
+    mcp2515_reg_write(MCP2515_REG_ADDR_RXM0EID0, 0xFFu);    /* RXM0EID0 */
+
+    /* CANINTE設定 */
+    /* TX0IE割り込み許可 */
+    /* RX0IE割り込み許可 */
+    mcp2515_reg_write(MCP2515_REG_ADDR_CANINTE,  0x05u);
+
+    /* 受信バッファ0設定 */
+    /* マスク/フィルタがオフで、すべてのメッセージを受信 */
+    mcp2515_reg_write(MCP2515_REG_ADDR_RXB0CTRL, 0x60u);
 
     /* ループバックモードに設定 */
     mcp2515_reg_write(MCP2515_REG_ADDR_TXB0_CANCTRL, 0x40u);
+
+#if 0
+    /* 通常モードに設定 */
+    mcp2515_reg_write(MCP2515_REG_ADDR_TXB0_CANCTRL, 0x00u);
+#endif
 }
 
 static void mcp2515_set_baudrate()
@@ -342,9 +372,6 @@ static void mcp2515_can_send()
     tx_buf[12] = 0x22u;    /* TXB0D7   */
     inst_size = 13u;
 
-    /* CANINTE設定(割り込み禁止) */
-    mcp2515_reg_write(MCP2515_REG_ADDR_CANINTE,  0x00u);
-
     /* 送信バッファ設定 */
     mcp2515_tx_buf_write(MCP2515_TX_BUF_WRITE_TXB0SIDH, &tx_buf[0], inst_size);
 
@@ -384,6 +411,52 @@ static void mcp2515_can_send()
     printf("[After Send]CNF1:0x%02x\n", reg_CNF1);
     printf("[After Send]CNF2:0x%02x\n", reg_CNF2);
     printf("[After Send]CNF3:0x%02x\n", reg_CNF3);
+}
+
+static void mcp2515_can_recv()
+{
+    bool    is_receive;
+    uint8_t can_dlc;        /* Data Length Code */
+    uint8_t can_idh;        /* CAN受信ID上位     */
+    uint8_t can_idl;        /* CAN受信ID下位     */
+    uint16_t can_id;         /* CAN受信ID        */
+    uint8_t can_data[8];    /* CAN受信データ    */
+
+    /* RXB0バッファからの受信割り込みをチェック */
+    is_receive = mcp2515_is_rxb0_receive();
+
+    if (is_receive == true)
+    {
+        printf("****Received CAN Message.****\n");
+        mcp2515_reg_read(MCP2515_REG_ADDR_RXB0SIDH, &can_idh);
+        mcp2515_reg_read(MCP2515_REG_ADDR_RXB0SIDL, &can_idl);
+        mcp2515_reg_read(MCP2515_REG_ADDR_RXB0DLC,  &can_dlc);
+        can_id = (can_idh << 3u) | (can_idl >> 5u);
+
+        for(int idx = 0u; idx < can_dlc; idx++)
+        {
+            mcp2515_reg_read(MCP2515_REG_ADDR_RXB0D0 + idx, &can_data[idx]);
+        }
+
+        /* RX0IFフラグをクリア */
+        mcp2515_reg_write(MCP2515_REG_ADDR_CANINTF, 0x00u);
+
+        /* 受信データを表示 */
+        printf("can_idh = 0x%02x\n", can_idh);
+        printf("can_idl = 0x%02x\n", can_idl);
+        printf("can_id = 0x%x\n", can_id);
+        printf("can_dlc= 0x%02x\n", can_dlc);
+
+        for(int idx = 0u; idx < 8; idx++)
+        {
+            printf("can_data[%d] = 0x%02x\n", idx, can_data[idx]);
+        }
+    }
+    else
+    {
+        /* 受信割り込み無しなら何もしない */
+    }
+    
 }
 
 static void mcp2515_txb0_send_request()
@@ -457,6 +530,26 @@ static bool repeating_timer1sec_callback(struct repeating_timer *t)
     return true;
 }
 
+static bool mcp2515_is_rxb0_receive()
+{
+    uint8_t reg_val;
+    bool ret;
+
+    ret = false;
+    mcp2515_reg_read(MCP2515_REG_ADDR_CANINTF, &reg_val);
+
+    if ( (reg_val & 0x01u) == 0x01u)
+    {
+        ret = true;
+    }
+    else
+    {
+        /* do nothing */
+    }
+
+    return ret;
+}
+
 void main(void)
 {
     uint8_t out_RX1BF;
@@ -495,7 +588,8 @@ void main(void)
             out_RX1BF = PIN_LOW;
         }
         #endif
-        mcp2515_can_send();
+        mcp2515_can_recv();     /* CAN受信処理 */
+        mcp2515_can_send();     /* CAN送信処理 */
         sleep_ms(1000u);
     }
 }
