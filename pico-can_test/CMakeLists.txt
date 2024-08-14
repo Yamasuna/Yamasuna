@@ -22,7 +22,7 @@ target_link_libraries(test pico_stdlib hardware_spi)
 
 #Enable USB output, disable UART output
 pico_enable_stdio_usb(test 1)
-pico_enable_stdio_uart(test 0)                    
+pico_enable_stdio_uart(test 0)
 
 #Create map/bin/hex/uf2 file etc.
 pico_add_extra_outputs(test)

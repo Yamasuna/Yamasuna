@@ -1,4 +1,4 @@
-// Padded and checksummed version of: C:/Users/sunas/Documents/rasbperry_pi_pico/pico-can_test/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+// Padded and checksummed version of: C:/Users/sunas/Documents/Git/Yamasuna/pico-can_sample/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 .cpu cortex-m0plus
 .thumb
